@@ -3,7 +3,7 @@
 from __future__ import print_function
 
 def bubble_sort(iterable):
-    '''冒泡排序（英语：Bubble Sort）是一种简单的排序算法，也叫做升序排序
+    '''冒泡排序（英语：Bubble Sort）是一种典型的交换排序算法，也叫做升序排序
     参数：可迭代序列
     返回：升序排序后的可迭代序列
     原理：
