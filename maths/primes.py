@@ -49,7 +49,7 @@ def _is_prime1(n):
 意味判断步长可以增大到6
 复杂度 O(√n)，但比方法2快3倍左右
 '''
-def _is_prime(n):
+def is_prime(n):
     if n == 2 or n == 3:
         return 1
     if n % 6 != 1 and n % 6 != 5:
@@ -95,7 +95,7 @@ def exec_time(func, data):
 def test(length):
     test_iter = list(range(length))
     print('遍历长度：', length)
-    for i,f in enumerate([_is_prime0, _is_prime1, _is_prime]):
+    for i,f in enumerate([_is_prime0, _is_prime1, is_prime]):
         print('筛选素数方法', i, '耗时：', exec_time(lambda x: filter(f, x), test_iter), 's')
 
 def test_eratosthenes(length):
