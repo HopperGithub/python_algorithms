@@ -4,14 +4,14 @@ from __future__ import print_function
 from timeit import default_timer
 
 '''
-穷举法，从 2 遍历到 n / 2， 复杂度 O(n)
+穷举法，从 2 遍历到 n - 1， 复杂度 O(n)
 '''
 def _is_prime0(n):
     if n < 2:
         return 0
 
     i = 2
-    while i < n - 1:
+    while i < n:
         if n % i == 0:
             return 0
         i += 1
@@ -98,7 +98,14 @@ def test(length):
     for i,f in enumerate([_is_prime0, _is_prime1, _is_prime]):
         print('筛选素数方法', i, '耗时：', exec_time(lambda x: filter(f, x), test_iter), 's')
 
+def test_eratosthenes(length):
+    start = default_timer()
+    sieve_of_eratosthenes(length)
+    end = default_timer()
+
+    return end - start
+
 if __name__ == '__main__':
     test(50000)
-    # print(sieve_of_eratosthenes(20))
+    print('筛选素数方法 eratosthenes 耗时：', test_eratosthenes(50000))
 
